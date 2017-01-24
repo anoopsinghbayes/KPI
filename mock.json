@@ -1,0 +1,165 @@
+[{category:"Sales",
+  data:[{
+    heading:"Sales",
+    actualVal: "$ 2.9M",
+    growth: "+517.6K",
+    changeVsLY: "+20.97%",
+    vsPlan: "+$5.8M",
+    values:[
+      {metric:"Traffic",
+        actualVal: "$ 2.9M",
+    growth: "+517.6K",
+    changeVsLY: "+20.97%",
+    vsPlan: "+$5.8M"
+      },
+      {metric:"Units/Basket",
+        actualVal: "$ 2.9M",
+    growth: "+517.6K",
+    changeVsLY: "+20.97%",
+    vsPlan: "+$5.8M"
+      },
+      {metric:"AUR",
+        actualVal: "$ 2.9M",
+    growth: "+517.6K",
+    changeVsLY: "+20.97%",
+    vsPlan: "+$5.8M"
+      },
+      {metric:"Price Gap",
+        actualVal: "$ 2.9M",
+    growth: "+517.6K",
+    changeVsLY: "+20.97%",
+    vsPlan: "+$5.8M"
+      },
+      {metric:"% Beaten",
+        actualVal: "$ 2.9M",
+    growth: "+517.6K",
+    changeVsLY: "+20.97%",
+    vsPlan: "+$5.8M"
+      }
+      ]
+  }]
+},
+{category:"Profit",
+  data:[{
+    heading:"Sales",
+    actualVal: "$ 2.9M",
+    growth: "+517.6K",
+    changeVsLY: "+20.97%",
+    vsPlan: "+$5.8M",
+    values:[
+      {metric:"Traffic",
+        actualVal: "$ 2.9M",
+    growth: "+517.6K",
+    changeVsLY: "+20.97%",
+    vsPlan: "+$5.8M"
+      },
+      {metric:"Units/Basket",
+        actualVal: "$ 2.9M",
+    growth: "+517.6K",
+    changeVsLY: "+20.97%",
+    vsPlan: "+$5.8M"
+      },
+      {metric:"AUR",
+        actualVal: "$ 2.9M",
+    growth: "+517.6K",
+    changeVsLY: "+20.97%",
+    vsPlan: "+$5.8M"
+      },
+      {metric:"Price Gap",
+        actualVal: "$ 2.9M",
+    growth: "+517.6K",
+    changeVsLY: "+20.97%",
+    vsPlan: "+$5.8M"
+      },
+      {metric:"% Beaten",
+        actualVal: "$ 2.9M",
+    growth: "+517.6K",
+    changeVsLY: "+20.97%",
+    vsPlan: "+$5.8M"
+      }
+      ]
+  }]
+},
+{category:"Inventory",
+  data:[{
+    heading:"Sales",
+    actualVal: "$ 2.9M",
+    growth: "+517.6K",
+    changeVsLY: "+20.97%",
+    vsPlan: "+$5.8M",
+    values:[
+      {metric:"Traffic",
+        actualVal: "$ 2.9M",
+    growth: "+517.6K",
+    changeVsLY: "+20.97%",
+    vsPlan: "+$5.8M"
+      },
+      {metric:"Units/Basket",
+        actualVal: "$ 2.9M",
+    growth: "+517.6K",
+    changeVsLY: "+20.97%",
+    vsPlan: "+$5.8M"
+      },
+      {metric:"AUR",
+        actualVal: "$ 2.9M",
+    growth: "+517.6K",
+    changeVsLY: "+20.97%",
+    vsPlan: "+$5.8M"
+      },
+      {metric:"Price Gap",
+        actualVal: "$ 2.9M",
+    growth: "+517.6K",
+    changeVsLY: "+20.97%",
+    vsPlan: "+$5.8M"
+      },
+      {metric:"% Beaten",
+        actualVal: "$ 2.9M",
+    growth: "+517.6K",
+    changeVsLY: "+20.97%",
+    vsPlan: "+$5.8M"
+      }
+      ]
+  }]
+},
+{category:"DotCom",
+  data:[{
+    heading:"Sales",
+    actualVal: "$ 2.9M",
+    growth: "+517.6K",
+    changeVsLY: "+20.97%",
+    vsPlan: "+$5.8M",
+    values:[
+      {metric:"Traffic",
+        actualVal: "$ 2.9M",
+    growth: "+517.6K",
+    changeVsLY: "+20.97%",
+    vsPlan: "+$5.8M"
+      },
+      {metric:"Units/Basket",
+        actualVal: "$ 2.9M",
+    growth: "+517.6K",
+    changeVsLY: "+20.97%",
+    vsPlan: "+$5.8M"
+      },
+      {metric:"AUR",
+        actualVal: "$ 2.9M",
+    growth: "+517.6K",
+    changeVsLY: "+20.97%",
+    vsPlan: "+$5.8M"
+      },
+      {metric:"Price Gap",
+        actualVal: "$ 2.9M",
+    growth: "+517.6K",
+    changeVsLY: "+20.97%",
+    vsPlan: "+$5.8M"
+      },
+      {metric:"% Beaten",
+        actualVal: "$ 2.9M",
+    growth: "+517.6K",
+    changeVsLY: "+20.97%",
+    vsPlan: "+$5.8M"
+      }
+      ]
+  }]
+}
+]

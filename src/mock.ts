@@ -7,7 +7,7 @@ const tableItem=(title:string)=>{
         metric:`${title}`,
         actualVal:`$${getRandomArbitrary(1,5)}M`,
         changeVsLY:`+${getRandomArbitrary(10,20)}%`,
-        growth:`+${getRandomArbitrary(50,100)}K`,
+        growth:`$${getRandomArbitrary(50,100)}K`,
         contribution:`$${getRandomArbitrary(50,100)}M`,
 
     }

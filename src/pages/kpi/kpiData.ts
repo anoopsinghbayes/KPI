@@ -7,7 +7,7 @@ export class kpiChartData{
     key:string;
     constructor(){
         this.key='Cumulative Return';
-        let numberOfBarCharts=[52,13,4,''];
+        let numberOfBarCharts=['L52W','L13W','MTD','L4W','YTD'];
         this.values=numberOfBarCharts.map((item)=>{
             return {
                 "label":`${item}`,

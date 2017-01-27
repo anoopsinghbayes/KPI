@@ -10,7 +10,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Data Cafe</ion-title>
+    <ion-title><img src="assets/img/dc_logo.png" alt=""></ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -42,12 +42,19 @@
             <ion-card class='dc-card-2'>
               <div class="title">Actual</div>
               <div class="content">{{item.actualVal}}</div>
+              <div class="metric-icon">
+               <img src="assets/img/metric1.png" alt="name ">
+             </div>
             </ion-card>
           </ion-col>
           <ion-col>
             <ion-card class='dc-card-2'>
               <div class="title">Growth</div>
               <div class="content">{{item.growth}}</div>
+              
+             <div class="metric-icon">
+               <img src="assets/img/metric2.png" alt="name ">
+             </div>
             </ion-card>
 
           </ion-col>
@@ -57,12 +64,18 @@
              <ion-card class='dc-card-2'>
               <div class="title">Chg Vs LY</div>
               <div class="content">{{item.changeVsLY}}</div>
+              <div class="metric-icon">
+               <img src="assets/img/metric3.png" alt="name ">
+             </div>
             </ion-card>
           </ion-col>
           <ion-col>
            <ion-card class='dc-card-2'>
               <div class="title">Contribution</div>
               <div class="content">{{item.contribution}}</div>
+              <div class="metric-icon">
+               <img src="assets/img/metric4.png" alt="name ">
+             </div>
             </ion-card>
           </ion-col>
         </ion-row>

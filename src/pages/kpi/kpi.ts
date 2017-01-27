@@ -59,8 +59,13 @@ export class KpiPage {
   <div>
   <nvd3 [options]="options" [data]="data"></nvd3>
   </div>
+  <div class='map-container'>
   <img [src]="img">
-</ion-content>`
+  </div>
+</ion-content>`,
+styles:[`.map-container{
+    padding:5px;
+}`]
 })
 export class ModalContentPage implements OnInit {
   img: String;
@@ -81,13 +86,13 @@ export class ModalContentPage implements OnInit {
     this.options = {
       chart: {
         type: 'discreteBarChart',
-        color: ['#387EF5'],
+        color: ['#05af05'],
         height: 300,
         margin: {
           top: 20,
           right: 20,
           bottom: 50,
-          left: 55
+          left: 70
         },
         x: function (d) { return d.label; },
         y: function (d) { return d.value; },

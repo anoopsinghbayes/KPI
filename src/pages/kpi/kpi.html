@@ -7,78 +7,66 @@
 
 <ion-header>
   <ion-navbar>
-    <ion-title>{{card.title}} : {{card.actualVal}}</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Data Cafe</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
- <ion-card (click)='presentChartModal()' tappable color="primary">
+<ion-content>
 
-  
-
-  <ion-card-content>
-  
-  
-    <h2>Growth: {{card.growth}}</h2>
-    <h2>Chg VS LYr: {{card.changeVsLY}}</h2>
-    <h2>Vs Plan: {{card.VsPlan}}</h2>
-  </ion-card-content>
-
-
-</ion-card>
-
-<ion-grid>
-  <ion-row>
-    <ion-col width-50 color="secondary">
-      50
+  <ion-card class='dc-card' (click)='presentChartModal()' tappable color="light">
+    <ion-row>
+      <ion-col width-40>
+        <div class="card-title">{{card.title}}</div>
+        <div class="card-title">{{card.actualVal}}</div>
       </ion-col>
-      <ion-col width-50>
-       50
-        </ion-col>
-  </ion-row>
-</ion-grid>
-<div *ngFor="let item of card.table">
-  <ion-card>
-  <ion-card-header>
-    {{item.metric}}
-  </ion-card-header>
-  <ion-card-content>
-    The British use the term "header", but the American term "head-shot" the English simply refuse to adopt.
-  </ion-card-content>
-</ion-card>
-</div>
-<!--<ion-grid>
- 
-  <ion-row>
-    <ion-col>
-      <strong>Actual</strong>
-      <strong>Growth</strong>
-      <strong>% Chg to LY</strong>
-      <strong>Contributions</strong>
-    </ion-col>
-  </ion-row>
-</ion-grid>-->
-<table style="width:100%">
-  <thead>
-    <tr>
-      <td></td>
-      <td>Actual</td>
-      <td>Growth</td>
-      <td>% Chg to LY</td>
-      <td>Contributions</td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of card.table">
-      <td>{{item.metric}}</td>
-      <td>
-          {{item.actualVal}}
-      </td>
-      <td>{{item.growth}}</td>
-      <td>{{item.changeVsLY}}</td>
-      <td>{{item.contribution}}</td>
-    </tr>
+      <ion-col>
+        <h3>Growth: {{card.growth}}</h3>
+        <h3>Chg VS LYr: {{card.changeVsLY}}</h3>
+        <h3>Vs Plan: {{card.VsPlan}}</h3>
+      </ion-col>
+    </ion-row>
 
-  </tbody>
-</table>
-</ion-content>
+
+  </ion-card>
+
+
+  <ion-slides pager>
+    <ion-slide *ngFor="let item of card.table">
+      <div class="slide-title">{{item.metric}}</div>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-card class='dc-card-2'>
+              <div class="title">Actual</div>
+              <div class="content">{{item.actualVal}}</div>
+            </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card class='dc-card-2'>
+              <div class="title">Growth</div>
+              <div class="content">{{item.growth}}</div>
+            </ion-card>
+
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+             <ion-card class='dc-card-2'>
+              <div class="title">Chg Vs LY</div>
+              <div class="content">{{item.changeVsLY}}</div>
+            </ion-card>
+          </ion-col>
+          <ion-col>
+           <ion-card class='dc-card-2'>
+              <div class="title">Contribution</div>
+              <div class="content">{{item.contribution}}</div>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+
+  </ion-slides>

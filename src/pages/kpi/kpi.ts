@@ -1,10 +1,10 @@
-import { Component,OnInit,Input } from '@angular/core';
-import { ModalController, NavController, NavParams,Platform,ViewController } from 'ionic-angular';
-
+import { Component, OnInit, Input } from '@angular/core';
+import { ModalController, NavController, NavParams, Platform, ViewController } from 'ionic-angular';
+import { kpiStyle } from './kpi.scss';
 import * as d3 from 'd3';
-declare var nv:any;
+declare var nv: any;
 import { nvD3 } from 'ng2-nvd3';
-import {appStore } from '../../../src/mock'
+import { appStore } from '../../../src/mock'
 import { kpiChartData } from './kpiData';
 
 /*
@@ -16,36 +16,36 @@ import { kpiChartData } from './kpiData';
 @Component({
   selector: 'page-kpi',
   templateUrl: 'kpi.html',
-  
+  styles: [``]
 })
-export class KpiPage{
-@Input() kpiData:any;
-card:any;
-tabs:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController) {
-  this.card=navParams.data;
-  console.log(this.card);
+export class KpiPage {
+  @Input() kpiData: any;
+  card: any;
+  tabs: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
+    this.card = navParams.data;
+    console.log('card', this.card);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad KpiPage');
   }
 
-  presentChartModal(){
-    let modal = this.modalCtrl.create(ModalContentPage, {chartImg:"ANoop"});
+  presentChartModal() {
+    let modal = this.modalCtrl.create(ModalContentPage, { title:`${this.card.title} % Chng Vs Ly`,chartImg: "assets/img/map.png" });
     modal.present();
   }
- 
+
 
 
 };
 
 @Component({
-  
-  template:`<ion-header>
+
+  template: `<ion-header>
   <ion-toolbar>
     <ion-title>
-      Description
+      {{title}}
     </ion-title>
     <ion-buttons start>
       <button ion-button (click)="dismiss()">
@@ -59,38 +59,40 @@ tabs:any;
   <div>
   <nvd3 [options]="options" [data]="data"></nvd3>
   </div>
+  <img [src]="img">
 </ion-content>`
 })
-export class ModalContentPage implements OnInit{
- img:String;
- options;
+export class ModalContentPage implements OnInit {
+  img: String;
+  options;
   data;
-constructor(public platform: Platform,
+  title;
+  constructor(public platform: Platform,
     public params: NavParams,
-    public viewCtrl: ViewController){
-  this.img=params.get('chartImg');
-  
-  
-}
-dismiss() {
+    public viewCtrl: ViewController) {
+    this.img = params.get('chartImg');
+    this.title=params.get('title');
+
+  }
+  dismiss() {
     this.viewCtrl.dismiss();
   }
-    ngOnInit(){
+  ngOnInit() {
     this.options = {
       chart: {
         type: 'discreteBarChart',
         color: ['#387EF5'],
         height: 300,
-        margin : {
+        margin: {
           top: 20,
           right: 20,
           bottom: 50,
           left: 55
         },
-        x: function(d){return d.label;},
-        y: function(d){return d.value;},
+        x: function (d) { return d.label; },
+        y: function (d) { return d.value; },
         showValues: true,
-        valueFormat: function(d){
+        valueFormat: function (d) {
           return d3.format(',%')(d);
         },
         duration: 500,
@@ -100,12 +102,12 @@ dismiss() {
         yAxis: {
           axisLabel: 'Y Axis',
           axisLabelDistance: -10,
-          
+
         }
       }
     }
 
-    let tempData=new kpiChartData();
+    let tempData = new kpiChartData();
     console.log(tempData);
     this.data = [tempData];
   }

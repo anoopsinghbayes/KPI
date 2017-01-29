@@ -5,13 +5,15 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { KpiPage } from '../pages/kpi/kpi';
 import { ModalContentPage } from '../pages/kpi/kpi';
 import { nvD3 } from 'ng2-nvd3';
+import {FilterPage  } from '../pages/filter/filter';
 @NgModule({
   declarations: [
     MyApp,
    TabsPage,
     KpiPage,
     ModalContentPage,
-    nvD3
+    nvD3,
+    FilterPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -21,7 +23,8 @@ import { nvD3 } from 'ng2-nvd3';
     MyApp,
     TabsPage,
     KpiPage,
-    ModalContentPage
+    ModalContentPage,
+    FilterPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

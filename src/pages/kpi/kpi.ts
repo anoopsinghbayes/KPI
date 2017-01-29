@@ -6,7 +6,7 @@ declare var nv: any;
 import { nvD3 } from 'ng2-nvd3';
 import { appStore } from '../../../src/mock'
 import { kpiChartData } from './kpiData';
-
+import {  FilterPage} from './../filter/filter';
 /*
   Generated class for the Kpi page.
 
@@ -30,7 +30,10 @@ export class KpiPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad KpiPage');
   }
-
+  presentFilter() {
+    let modal = this.modalCtrl.create(FilterPage);
+    modal.present();
+  }
   presentChartModal() {
     let modal = this.modalCtrl.create(ModalContentPage, { title:`${this.card.title} % Chng Vs Ly`,chartImg: "assets/img/map.png" });
     modal.present();
@@ -82,6 +85,7 @@ export class ModalContentPage implements OnInit {
   dismiss() {
     this.viewCtrl.dismiss();
   }
+   
   ngOnInit() {
     this.options = {
       chart: {

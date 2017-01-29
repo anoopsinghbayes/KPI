@@ -1,0 +1,48 @@
+<!--
+  Generated template for the Filter page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">Cancel</button>
+    </ion-buttons>
+
+    <ion-title>
+      Filter Sessions
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button (click)="dismiss()" strong>Done</button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-list>
+  <ion-item>
+      <ion-label>Start Date</ion-label>
+      <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="startDate"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>End Date</ion-label>
+      <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="endDate"></ion-datetime>
+    </ion-item>
+  <ion-item>
+    <ion-label>Merchandise</ion-label>
+    <ion-select [(ngModel)]="Merchandise">
+      <ion-option value="total">Total</ion-option>
+      <ion-option value="SBU">SBU</ion-option>
+      <ion-option value="GMM">GMM</ion-option>
+      <ion-option value="Department">Department</ion-option>
+      <ion-option value="CatagoryGroup">Catagory Group</ion-option>
+      <ion-option value="Catagory">Catagory</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+</ion-content>

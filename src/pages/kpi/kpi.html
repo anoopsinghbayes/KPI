@@ -10,7 +10,12 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title><img src="assets/img/dc_logo.png" alt=""></ion-title>
+    <ion-title><img style="height: 42px;width: 42px" src="assets/img/dc_logo.png" alt=""></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentFilter()">
+        <ion-icon ios="ios-options-outline" md="md-options"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -33,7 +38,7 @@
   </ion-card>
 
 
-  <ion-slides pager>
+  <ion-slides pager >
     <ion-slide *ngFor="let item of card.table">
       <div class="slide-title">{{item.metric}}</div>
       <ion-grid>

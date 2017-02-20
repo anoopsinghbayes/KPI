@@ -4,6 +4,8 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { appStore } from '../mock';
+
+
 export interface PageInterface {
   title: string;
   component: any;
@@ -14,7 +16,8 @@ export interface PageInterface {
 }
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
+  
 })
 export class MyApp {
   rootPage:any;

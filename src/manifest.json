@@ -1,8 +1,9 @@
 {
   "name": "Data Cafe",
   "short_name": "Data Cafe",
-  "start_url": "index.html",
+  "start_url": "/",
   "display": "standalone",
+  
   "icons": [{
     "src": "assets/imgs/logo.png",
     "sizes": "512x512",
@@ -14,6 +15,6 @@
       "type": "image/png"
     }
   ],
-  "background_color": "#4e8ef7",
-  "theme_color": "#4e8ef7"
+  "background_color": "#3898cf",
+  "theme_color": "#3898cf"
 }

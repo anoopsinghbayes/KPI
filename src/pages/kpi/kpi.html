@@ -10,7 +10,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title><img style="height: 42px;width: 42px" src="assets/img/dc_logo.png" alt=""></ion-title>
+    <ion-title class="toolbar-title-ios"><img style="height: 42px;width: 42px" src="assets/img/dc_logo.png" alt=""></ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="presentFilter()">
         <ion-icon ios="ios-options-outline" md="md-options"></ion-icon>
@@ -19,7 +19,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="kpi-page-area">
 
   <ion-card class='dc-card' (click)='presentChartModal()' tappable color="light">
     <ion-row>
@@ -37,8 +37,15 @@
 
   </ion-card>
 
-
-  <ion-slides pager >
+<!--<div style="margin:0 auto;" class="silder-button-container">
+<button class="silder-button" *ngFor="let item of card.table; let i = index;" (click)='goTo(i)' ion-button small clear>{{item.metric}}</button>
+</div>-->
+<ion-segment [(ngModel)]="selectedSegment" (ionChange)="onSegmentChanged($event)">
+    <ion-segment-button *ngFor="let item of card.table; let i = index;" [value]="item.metric">
+      {{item.metric}}
+    </ion-segment-button>
+</ion-segment>
+  <ion-slides #Slides class="kpi-slides" (ionSlideDidChange)="onSlideChanged($event)">
     <ion-slide *ngFor="let item of card.table">
       <div class="slide-title">{{item.metric}}</div>
       <ion-grid>
@@ -88,3 +95,4 @@
     </ion-slide>
 
   </ion-slides>
+</ion-content>

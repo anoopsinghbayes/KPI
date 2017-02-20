@@ -24,25 +24,35 @@ $font-path: "../assets/fonts";
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #387ef5,
-  secondary:  #32db64,
+  primary:    #007dc6,
+  secondary:  #3898cf,
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222,
   wal-blue:   #78B9E7
 );
-
-
+$background-color:#f4f4f5;
+$toolbar-background: color($colors, primary) !default;
+$toolbar-text-color:#fff !default;
+$tabs-background:            color($colors, secondary) !default;
+$tabs-tab-color-inactive:    #fff !default;
+$tabs-ios-tab-color-inactive: $tabs-tab-color-inactive !default;
+$tabs-md-tab-color-inactive: $tabs-tab-color-inactive !default;
+$tabs-tab-color-active:      #ffc220 !default;
 // variable overrides
 
-$grid-padding-width:0px;
-$card-md-margin-left:0px;
-$card-md-margin-right:0px;
 
-$card-ios-margin-left:0px;
-$card-ios-margin-right:0px;
+$dc-card-margin:0px;
+$grid-padding-width:2px;
+$card-md-margin-left:$dc-card-margin;
+$card-md-margin-right:$dc-card-margin;
+$toolbar-md-title-text-align:center;	
 
+$card-ios-margin-left:$dc-card-margin;
+$card-ios-margin-right:$dc-card-margin;
 
+$card-wp-margin-left:$dc-card-margin;
+$card-wp-margin-right:$dc-card-margin;
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { Component,Injectable } from '@angular/core';
+import { WindowService } from '../../providers/window-service';
 /*
   Generated class for the PushButton component.
 
@@ -8,22 +8,18 @@ import { Component } from '@angular/core';
 */
 @Component({
   selector: 'push-button',
-  templateUrl: 'push-button.html'
+  templateUrl: 'push-button.html',
+  providers:[WindowService]
 })
 export class PushButtonComponent {
 
   text: string;
+applicationServerPublicKey='BEdOueUM56YGCWpt7pmQyt4sMuWz3PAn2hjJoUuC5G5rxe1_5HZBVGZY1o9eyiWLS9KABMMsJr16Im6VjKcAc5Y';
 
-  constructor() {
+isSubscribed = false;
+window:any;
 
-const applicationServerPublicKey = 'BGU4Ja-4gTEqW0Nqy321PALAfEVcRQQ4hLpavHL5foP3MHsc_LU67q23GptlNyzqx4SLQ6oJMHfPhhxrUcsynYU';
-
-const pushButton = document.querySelector('.js-push-btn');
-
-let isSubscribed = false;
-let swRegistration = null;
-
-function urlB64ToUint8Array(base64String) {
+urlB64ToUint8Array(base64String) {
   const padding = '='.repeat((4 - base64String.length % 4) % 4);
   const base64 = (base64String + padding)
     .replace(/\-/g, '+')
@@ -38,8 +34,54 @@ function urlB64ToUint8Array(base64String) {
   return outputArray;
 
 }
-    console.log('Hello PushButton Component');
-    this.text = 'Hello World';
+ updateSubscriptionOnServer(subscription) {
+  // TODO: Send subscription to application server
+
+  const subscriptionJson = document.querySelector('.js-subscription-json');
+  //const subscriptionDetails = document.querySelector('.js-subscription-details');
+
+  if (subscription) {
+    console.log("subscription",JSON.stringify(subscription, null, 2));
+
+  //  subscriptionDetails.classList.remove('is-invisible');
+  } else {
+    //subscriptionDetails.classList.add('is-invisible');
+  }
+}
+subscribeUser() {
+  const applicationServerKey = this.urlB64ToUint8Array(this.applicationServerPublicKey);
+  let tempThis=this;
+  this.window.swRegistration.pushManager.subscribe({
+    userVisibleOnly: true,
+    applicationServerKey: applicationServerKey
+  })
+  .then(function(subscription) {
+    console.log('User is subscribed:', subscription);
+
+    tempThis.updateSubscriptionOnServer(subscription);
+
+    //isSubscribed = true;
+
+    //updateBtn();
+  })
+  .catch(function(err) {
+    console.log('Failed to subscribe the user: ', err);
+    //updateBtn();
+  });
+}
+  constructor(windowRef: WindowService) {
+
+
+
+//navigator=windowRef.nativeNavigator;
+this.window=windowRef.nativeWindow;
+//this.window.swRegistration = null;
+
+    //console.log('Hello PushButton Component');
+    //this.text = 'Hello World';
   }
 
-}
+};
+
+
+

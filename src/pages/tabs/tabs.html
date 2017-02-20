@@ -1,7 +1,7 @@
 
-<ion-tabs tabsHighlight='true' >
+<ion-tabs tabsHighlight='true' tabsPlacement="top">
 
-  <ion-tab *ngFor="let tab of tabs" [rootParams]="tab" [root]="tab.root" [tabTitle]="tab.title" [tabIcon]="tab.icon"></ion-tab> 
+  <ion-tab *ngFor="let tab of tabs" [rootParams]="tab" [root]="tab.root" [tabTitle]="tab.title" ></ion-tab> 
   <!--<ion-tab swipeBackEnabled='true' [root]="tab1Root" tabTitle="Sales" tabIcon="home"></ion-tab>
   <ion-tab swipeBackEnabled='true'[root]="tab2Root" tabTitle="About" tabIcon="information-circle"></ion-tab>
   <ion-tab swipeBackEnabled='true'[root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>-->

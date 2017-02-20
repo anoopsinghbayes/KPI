@@ -1,4 +1,17 @@
 page-kpi {
+    margin-right: 0px;
+    margin-left: 0px;
+    $text-color:#fff;
+    .kpi-page-area{
+        height: 100%;
+    .kpi-slides{
+        height: 64%;
+        ion-row{
+            padding:0 2.5px 0 2.5px;
+        }
+    }
+    }
+    
     background: #F4F4F5;
     ion-slider{
         background: red;
@@ -8,30 +21,33 @@ page-kpi {
         
     }
     ion-slides{
-        height:300px;
+
+        //height:300px;
     }
     .card-title{
         font-size: 2em;
     }
+    .silder-button-container{
+        display: flex;
+        justify-content: space-around;
+    }
+    .silder-button{
+        padding:0 0.1em;
+        font-size:1.2rem;
+    }
     .dc-card{
-        
-        color:#fff;
-        h3{color:#fff;}
-        
-
-background: #1e3c72; /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #1e3c72 , #2a5298); /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #1e3c72 , #2a5298); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        
-
+        height: 23%;
+        color:$text-color;
+        h3{color:$text-color}
+        background: #3898cf;
         margin-top:0px;
         padding: 25px;
-        // padding-top:25px; 
         min-height: 110px;
     }
     .dc-card-2 {
         padding: 10px;
         text-align: left;
+        border-radius: 5px;
         min-height: 100px;
         background: #FFF;
         .title{
